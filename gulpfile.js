@@ -8,9 +8,12 @@ var reactify = require('reactify');  // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
 var lint = require('gulp-eslint'); //Lint JS files, including JSX
+var sass = require('gulp-sass'); // Good ol gulp sass
+
+// A comment break line 
 
 var config = {
-	port: 9005,
+	port: 3000,
 	devBaseUrl: 'http://localhost',
 	paths: {
 		html: './src/*.html',
@@ -19,6 +22,7 @@ var config = {
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
       		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
     	],
+    	sass: 'dist/sass/custom.scss',
 		dist: './dist',
 		mainJs: './src/main.js'
 	}
@@ -61,6 +65,14 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
+gulp.task('sass', function(){
+	gulp.src('./dist/sass/*.scss')
+    	.pipe(sass().on('error', sass.logError))
+		.pipe(concat('custom.css'))
+    	.pipe(gulp.dest(config.paths.dist + '/css'))
+		.pipe(connect.reload());
+});
+
 gulp.task('lint', function() {
 	return gulp.src(config.paths.js)
 		.pipe(lint({config: 'eslint.config.json'}))
@@ -69,7 +81,8 @@ gulp.task('lint', function() {
 
 gulp.task('watch', function() {
 	gulp.watch(config.paths.html, ['html']);
+	gulp.watch(config.paths.sass, ['sass']);
 	gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'sass', 'lint', 'open', 'watch']);
