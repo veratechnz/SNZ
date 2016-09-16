@@ -9,9 +9,11 @@ var source = require('vinyl-source-stream'); // Use conventional text streams wi
 var concat = require('gulp-concat'); //Concatenates files
 var lint = require('gulp-eslint'); //Lint JS files, including JSX
 var sass = require('gulp-sass'); // Good ol gulp sass
+var rename = require('gulp-rename'); // Gulp rename for minified css files 
+var cleanCss = require('gulp-clean-css'); // Css minifiyer
+
 
 // A comment break line 
-
 var config = {
 	port: 3000,
 	devBaseUrl: 'http://localhost',
@@ -69,6 +71,8 @@ gulp.task('sass', function(){
 	gulp.src('./dist/sass/*.scss')
     	.pipe(sass().on('error', sass.logError))
 		.pipe(concat('custom.css'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(cleanCss())
     	.pipe(gulp.dest(config.paths.dist + '/css'))
 		.pipe(connect.reload());
 });
