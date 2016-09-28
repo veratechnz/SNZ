@@ -1,0 +1,39 @@
+/*Custom SCSS*/
+// Imports
+
+// Materialize Imports
+// @import "components/prefixer";
+@import "materialize-sass/components/mixins";
+@import "materialize-sass/components/color";
+@import "materialize-sass/components/variables";
+//Normal Sass Imports
+// variables;
+@import 'media.scss';
+@import 'nav.scss';
+
+// Resets
+body {
+	background-color: #efefef;
+}
+
+// Custom Updates
+h1 {
+	font-style: 45px;
+	height: 120px;
+}
+
+// Materialize Card Link Override
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)  {
+	color: #9C9C9C;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover  {
+	color: #000;
+}
+
+.booty {
+	padding-top: 2%;
+}
+
+
+

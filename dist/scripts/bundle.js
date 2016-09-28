@@ -9213,7 +9213,5 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 $ = jQuery = require('jquery');
 
-var App = console.log('Hello world from Browserify');
-
-module.exports = App;
+// comment
 },{"jquery":1}]},{},[2]);

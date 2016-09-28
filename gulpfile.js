@@ -18,15 +18,15 @@ var config = {
 	port: 3000,
 	devBaseUrl: 'http://localhost',
 	paths: {
-		html: './src/*.html',
-		js: './src/**/*.js',
+		html: './src/html/*.html',
+		js: './src/js/*.js',
 		css: [
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
       		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
     	],
-    	sass: 'dist/sass/custom.scss',
+    	sass: 'src/sass/*.scss',
 		dist: './dist',
-		mainJs: './src/main.js'
+		mainJs: './src/js/main.js'
 	}
 }
 
@@ -68,7 +68,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('sass', function(){
-	gulp.src('./dist/sass/*.scss')
+	gulp.src('./src/sass/*.scss')
     	.pipe(sass().on('error', sass.logError))
 		.pipe(concat('custom.css'))
 		.pipe(rename({suffix: '.min'}))
