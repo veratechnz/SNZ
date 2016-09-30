@@ -31,9 +31,35 @@ h1 {
 	color: #000;
 }
 
-.booty {
-	padding-top: 2%;
+//Div around all card content
+.card-wrapper {
+	margin-top: 4.8em;
 }
+
+// Nav Overrides For Materialize Css
+
+nav ul li {
+
+   float: none;
+ 
+}
+
+@media only screen and (min-width: 601px){
+
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+	    height: 100%;
+	    line-height: 164px;
+	}
+
+}
+
+nav {
+
+    color: none;
+    background-color: none;
+
+}
+
 
 
 

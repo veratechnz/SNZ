@@ -68,7 +68,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('sass', function(){
-	gulp.src('./src/sass/*.scss')
+	gulp.src('./src/sass/custom.scss')
     	.pipe(sass().on('error', sass.logError))
 		.pipe(concat('custom.css'))
 		.pipe(rename({suffix: '.min'}))
