@@ -9771,12 +9771,10 @@ var materialize = require("materialize");
 // Standards: 
 
 (function(){
-	console.log('obj');
 	// All UI updates and adjustments
 	var Ui = {
 
-	 	checkScreen:  function(){
-	 		console.log('z');
+	 	menus:  function(){
 	 		//Check window size and run internal functions. 
 	 		var checkSize = $(window).width();
 	 		var oldNav = 'leftNavContainer';
@@ -9784,7 +9782,6 @@ var materialize = require("materialize");
 
 	 		//Removes static desktop side nav
 			function removeNav(){
-				console.log('zb');
 				var elem = document.getElementById(oldNav);
 				elem.parentNode.removeChild(elem);
 			}
@@ -9792,7 +9789,8 @@ var materialize = require("materialize");
 			//Changes Material design class to full width
 			function updateMatClass(){
 				//Change Materilize layout from 10 to 12 for responsiv mobile. Checking via regex.
-				document.getElementById(newBody).className = document.getElementById(newBody).className.replace( /(?:^|\s)s10(?!\S)/g , ' s12' );
+				document.getElementById(newBody).className = //con't to next line
+				document.getElementById(newBody).className.replace( /(?:^|\s)s10(?!\S)/g , ' s12' );
 				//Trigger inclusion of mobile side nav
 				mobileSideNav();
 			}
@@ -9804,25 +9802,21 @@ var materialize = require("materialize");
 
 			//Activate and setup mobile side navigation
 			function mobileSideNav(){
-				console.log('a');
 				$('.button-collapse').sideNav();
 				$('.side-nav').css('display', 'block');
 			}
 
 			if(checkSize <= 1024){
-				console.log('b');
 				removeNav();
 				stretchHorizontalNav();
 				updateMatClass();
 			}
 
-
-
 		}
 	};
 
 	// Monitor Screen size for new menu breakpoint:
-	Ui.checkScreen();
+	Ui.menus();
 
 })(); //iffe ends
 },{"jquery":1,"materialize":2,"slideout":3}]},{},[6]);
