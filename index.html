@@ -21,7 +21,7 @@
     <div id="contentLeft">
 
       <ul id="leftNavigation">
-          <li class="main-logo"><a href="">Statistics New Zealand</a></li>
+          <li class="main-logo"><a href="">Statistics New Zealand p</a></li>
           <li><a href=""><i class="fa fa-search leftNavIcon"></i>Searching</a></li>
           <li class="active">
               <a href="#"><i class="fa fa-coffee leftNavIcon"></i> About us</a>
@@ -75,9 +75,29 @@
 
   <!-- Card Content Begins -->
       <div class="nav-horizontal" id="navHorizontal">
-        <i class="material-icons hamburger-icon">menu</i>
+        <a href="#" data-activates="slide-out" class="button-collapse">
+          <i class="material-icons hamburger-icon">menu</i>
+        </a>
         <i class="material-icons">home</i>
       </div>
+
+    <!-- Side Menu Nav Begins -->
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="userView">
+            <img class="background" src="images/office.jpg">
+            <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#!name"><span class="white-text name">John Doe</span></a>
+            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+    <!-- Side Menu Nav Ends -->
 
       <div class="col s10 card-wrapper" id="cardWrapper"> <!-- Offset Column -->
 
