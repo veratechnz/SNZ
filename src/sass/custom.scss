@@ -6,8 +6,11 @@
 @import "materialize-sass/components/mixins";
 @import "materialize-sass/components/color";
 @import "materialize-sass/components/variables";
+
+//Material Icons
+@import "material-icons";
+
 //Normal Sass Imports
-// variables;
 @import 'media.scss';
 @import 'nav.scss';
 
@@ -37,7 +40,6 @@ h1 {
 }
 
 // Nav Overrides For Materialize Css
-
 nav ul li {
 
    float: none;
