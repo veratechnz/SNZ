@@ -258,12 +258,17 @@ li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
     margin-top: 1em;
   }
 
+  .btn-floating.btn-medium.waves-effect.waves-light.red {
+    margin: 1em;
+  }
+
   // Nav Hamburger CSS
   a.button-collapse i.material-icons.hamburger-icon {
       margin: 0.5em;
       font-size: 2.2em;
       color: $stats-grey;
-    }
+  }
+
 
 }
 
