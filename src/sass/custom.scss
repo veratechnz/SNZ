@@ -2,6 +2,7 @@
 // Imports
 
 // Materialize Imports
+@import 'variables.scss';
 @import "materialize-sass/components/mixins";
 @import "materialize-sass/components/color";
 @import "materialize-sass/components/variables";
@@ -10,8 +11,9 @@
 @import "material-icons";
 
 //Normal Sass Imports
-@import 'media.scss';
 @import 'nav.scss';
+@import 'media.scss';
+
 
 // Resets
 body {
@@ -24,6 +26,8 @@ h1 {
 	height: 120px;
 }
 
+
+// CARD RESETS
 // Materialize Card Link Override
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating)  {
 	color: #9C9C9C;
@@ -33,9 +37,16 @@ h1 {
 	color: #000;
 }
 
+.card .card-title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+
 //Div around all card content
 .card-wrapper {
-	margin-top: 4.8em;
+	margin-top: 5.8em;
 }
 
 // Nav Overrides For Materialize Css
@@ -60,6 +71,9 @@ nav {
     background-color: none;
 
 }
+
+//Float right
+.fr {float: right;}
 
 
 

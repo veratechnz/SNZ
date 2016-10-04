@@ -89,7 +89,7 @@ h1 {
 
     a {
 
-      font-size: 0.875rem;
+      font-size: 1em;
       display: block;
       padding: 0.8rem 1rem 0.8rem 5rem;
       color: $navigation-color;
@@ -200,9 +200,20 @@ h1 {
 
 //Logo Area In Side Vertical Nav
 .main-logo {
-  background-color: #336666;
-  height: 4em;
+    width: 100%;
+    height: 4.8em;
+    background-image: url('/img/logo-grey-c.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: $stats-logo-grey;
+
 }
+
+#contentLeft ul#leftNavigation.master li.main-logo a{
+  padding: 0.4em 0.3em 0.3em 0em;
+}
+
+
 //I hate Id's in CSS but the original component used them in it's css, thus the use of an Id. 
 #leftNavigation.master li.main-logo a {
   border-bottom: none;
@@ -217,21 +228,45 @@ li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
   margin-top: .35em;
 }
 
+
 // All Horizontal Nav CSS
 .nav-horizontal {
   // height: 4em;
   width: 100%;
-  height: 3.9em;
-  background-color: #fff;
+  height: 4.75em;
+  background-color: $stats-light-grey;
   position: fixed;
   width: 83.66666%;
   right: 0;
   z-index: 10; 
   //Horizontal Nav Shadow
-  -webkit-box-shadow: 0px 5px 8px 0px rgba(50, 50, 50, 0.3);
-  -moz-box-shadow:    0px 5px 8px 0px rgba(50, 50, 50, 0.3);
-  box-shadow:         0px 5px 8px 0px rgba(50, 50, 50, 0.3);
+  -webkit-box-shadow: -1px 2px 4px 0px rgba(50, 50, 48, 0.55);
+  -moz-box-shadow:    -1px 2px 4px 0px rgba(50, 50, 48, 0.55);
+  box-shadow:         -1px 2px 4px 0px rgba(50, 50, 48, 0.55);
+
+  //Actions Icon
+  .card-action div.fixed-action-btn.horizontal.click-to-toggle {
+    top: 1em;
+  }
+  //Actions Icon Children
+  .card-action div.fixed-action-btn.horizontal.click-to-toggle.active ul {
+    top: 0em;
+  }
+  
+  //Menu Hamburger Icon
+  .nav-horizontal a.button-collapse i.material-icons.hamburger-icon {
+    margin-top: 1em;
+  }
+
+  // Nav Hamburger CSS
+  a.button-collapse i.material-icons.hamburger-icon {
+      margin: 0.5em;
+      font-size: 2.2em;
+      color: $stats-grey;
+    }
+
 }
+
 
 
 // Slideout css .
@@ -269,12 +304,6 @@ body {
   display: block;
 }
 
-// Nav Hamburger CSS
-i.material-icons {
-  font-size: 2em;
-  margin-top: 0.35em;
-  margin-left: 0.45em;
-}
 
 div.nav-horizontal i:nth-child(2) {
   float: right;

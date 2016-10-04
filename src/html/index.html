@@ -20,10 +20,10 @@
     <div id="contentLeft">
 
       <ul id="leftNavigation">
-          <li class="main-logo"><a href="">Statistics New Zealand p</a></li>
-          <li><a href=""><i class="fa fa-search leftNavIcon"></i>Searching</a></li>
+          <li class="main-logo"><a href=""><!-- <img src="img/logo-grey-c.png" alt=""> --></a></li>
+          <li><a href=""><i class="fa fa-angle-right leftNavIcon"></i>Searching</a></li>
           <li class="active">
-              <a href="#"><i class="fa fa-coffee leftNavIcon"></i> About us</a>
+              <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> About us</a>
               <ul>
                   <li>
                       <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> Our History</a>
@@ -34,7 +34,7 @@
               </ul>
           </li>
           <li>
-              <a href="#"><i class="fa fa-flask leftNavIcon"></i> Products</a>
+              <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> Products</a>
               <ul>
                   <li>
                       <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> Garden</a>
@@ -48,7 +48,7 @@
               </ul>
           </li>
           <li>
-              <a href="#"><i class="fa fa-truck leftNavIcon"></i> Services</a>
+              <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> Services</a>
               <ul>
                   <li>
                       <a href="#"><i class="fa fa-angle-right leftNavIcon"></i> Garden</a>
@@ -75,7 +75,23 @@
       <a href="#" data-activates="slide-out" class="button-collapse">
         <i class="material-icons hamburger-icon">menu</i>
       </a>
-      <i class="material-icons">home</i>
+      <div class="card-action">
+
+        <!-- Horizontal Menu Action Buttons Start -->
+        <div class="fixed-action-btn horizontal click-to-toggle active" style="position: absolute; right: 24px;">
+          <a class="btn-floating btn-medium ">
+            <i class="material-icons">more_horiz</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red" style="transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px); opacity: 1;"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1" style="transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px); opacity: 1;"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green" style="transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px); opacity: 1;"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue" style="transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px); opacity: 1;"><i class="material-icons">attach_file</i></a></li>
+          </ul>
+        </div>
+        <!-- Horizontal Menu Action Buttons End!!! -->
+              
+      </div>
     </div>
 
   <!-- Side Menu Nav Begins -->
@@ -99,13 +115,62 @@
   <!-- Card Content Begins -->
       <div class="col s10 card-wrapper" id="cardWrapper"> <!-- Offset Column -->
 
+          <div class="row">
+
+            <div class="col s4">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/card-a.jpg">
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s4">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/card-a.jpg">
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s4">
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/card-a.jpg">
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
           <!-- row-b begins -->
           <div class="row row-b">
 
             <div class="col s4"> 
               <div class="card horizontal">
                 <div class="card-image">
-                  <img src="http://placehold.it/100x190">
+                  <img src="img/card-b.jpg">
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
@@ -117,12 +182,11 @@
                 </div>
               </div>
             </div> 
-
             
           <div class="col s4">          
             <div class="card horizontal">
                 <div class="card-image">
-                  <img src="http://placehold.it/100x190">
+                  <img src="img/card-b.jpg">
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
@@ -138,7 +202,7 @@
           <div class="col s4">          
             <div class="card horizontal">
                 <div class="card-image">
-                  <img src="http://placehold.it/100x190">
+                  <img src="img/card-b.jpg">
                 </div>
                 <div class="card-stacked">
                   <div class="card-content">
@@ -157,68 +221,76 @@
       <div class="row row-c">
 
         <div class="col s3"> 
-          <div class="card horizontal">
-            <div class="card-image">
-              <img src="http://placehold.it/100x190">
+
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="img/card-c.jpg">
             </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
           </div>
+
         </div> 
 
         
-      <div class="col s3">          
-        <div class="card horizontal">
-            <div class="card-image">
-              <img src="http://placehold.it/100x190">
-            </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
+      <div class="col s3"> 
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/card-c.jpg">
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="col s3">          
-        <div class="card horizontal">
-            <div class="card-image">
-              <img src="http://placehold.it/100x190">
-            </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
+      <div class="col s3"> 
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/card-c.jpg">
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="col s3">          
-        <div class="card horizontal">
-            <div class="card-image">
-              <img src="http://placehold.it/100x190">
-            </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
-            </div>
+      <div class="col s3">
+
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="img/card-c.jpg">
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
       </div>
 
     </div> <!-- row-b Ends -->
@@ -236,7 +308,7 @@
                 <p>I am a very simple card. I am good at containing small bits of information.</p>
               </div>
               <div class="card-action">
-                <a href="#">This is a link</a>
+                <a class="waves-effect waves-light btn fr">button</a>
               </div>
             </div>
           </div>
@@ -253,7 +325,7 @@
                 <p>I am a very simple card. I am good at containing small bits of information.</p>
               </div>
               <div class="card-action">
-                <a href="#">This is a link</a>
+                <a class="btn-floating btn-medium waves-effect waves-light red fr"><i class="material-icons">add</i></a>
               </div>
             </div>
           </div>
@@ -272,9 +344,6 @@
             <div class="card-stacked">
               <div class="card-content">
                 <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
               </div>
             </div>
           </div>
