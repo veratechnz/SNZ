@@ -28,6 +28,12 @@ var materialize = require("materialize");
 	 		var oldNav = 'leftNavContainer';
 	 		var newBody = 'cardWrapper';
 
+	 		if(checkSize <= 1024){
+	 			removeNav();
+	 			stretchHorizontalNav();
+	 			updateMatClass();
+	 		}
+
 	 		//Removes static desktop side nav
 			function removeNav(){
 				var elem = document.getElementById(oldNav);
@@ -52,12 +58,6 @@ var materialize = require("materialize");
 			function mobileSideNav(){
 				$('.button-collapse').sideNav();
 				$('.side-nav').css('display', 'block');
-			}
-
-			if(checkSize <= 1024){
-				removeNav();
-				stretchHorizontalNav();
-				updateMatClass();
 			}
 
 		}
