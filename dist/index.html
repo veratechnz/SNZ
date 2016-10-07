@@ -23,18 +23,18 @@
           <li class="main-logo">LOGO HERE</li>
           <li><a href="">Home <i class="fa fa-angle-down leftNavIcon"></i></a></li>
           <li class="active">
-              <a href="#">My Dashboards <i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#">My dashboards <i class="fa fa-angle-down leftNavIcon"></i></a>
               <ul>
                   <li>
-                      <a href="#">Our History <i class="fa fa-angle-down leftNavIcon"></i></a>
+                      <a href="#">Our history <i class="fa fa-angle-down leftNavIcon"></i></a>
                   </li>
                   <li>
-                      <a href="#"> Our Team <i class="fa fa-angle-down leftNavIcon"></i></a>
+                      <a href="#"> Our team <i class="fa fa-angle-down leftNavIcon"></i></a>
                   </li>
               </ul>
           </li>
           <li>
-              <a href="#">Data By Topic <i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#">Data by topic <i class="fa fa-angle-down leftNavIcon"></i></a>
               <ul>
                   <li>
                       <a href="#"> Garden <i class="fa fa-angle-down leftNavIcon"></i></a>
@@ -48,25 +48,30 @@
               </ul>
           </li>
           <li>
-              <a href="#"> Data By Place <i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#"> Data by place <i class="fa fa-angle-down leftNavIcon"></i></a>
           </li>
           <li>
               <a href="#"> Indicators <i class="fa fa-angle-down leftNavIcon"></i></a>
           </li>
           <li>
-              <a href="#"> Data For Maori <i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#"> Data for Maori <i class="fa fa-angle-down leftNavIcon"></i></a>
+          </li>
+          <li class="split-marker">
+              <a href="#"> Data via API <i class="fa fa-angle-down leftNavIcon"></i></a>
           </li>
           <li>
-              <a href="#"> Data Via API <i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#"> Survey participants <i class="fa fa-angle-down leftNavIcon"></i></a>
           </li>
           <li>
-              <a href="#"> Survey Participants <i class="fa fa-angle-down leftNavIcon"></i></a>
-          </li>
-          <li>
-              <a href="#"> Contact Us<i class="fa fa-angle-down leftNavIcon"></i></a>
+              <a href="#"> Contact us<i class="fa fa-angle-down leftNavIcon"></i></a>
           </li>
           <li>
               <a href="#"> Privacy<i class="fa fa-angle-down leftNavIcon"></i></a>
+          </li>
+          <li class="social-menu">
+            <i class="fa fa-twitter-square"></i>
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-linkedin-square"></i>
           </li>
 
       </ul>
@@ -76,8 +81,11 @@
 
   <!-- *** All Nav Content Ends-->
     <div class="nav-horizontal" id="navHorizontal">
-      <a href="#" data-activates="slide-out" class="button-collapse btn-floating btn-medium waves-effect waves-light red">
+      <a href="#" data-activates="slide-out" class="button-collapse btn-floating mob-menu btn-medium red" id="mobMenu">
           <i class="material-icons">menu</i>
+      </a>
+      <a href="" class="btn-floating btn-medium waves-effect waves-light red" id="search">
+        <i class="material-icons">search</i>
       </a>
       <!-- Horizontal Menu Action Buttons Start -->
       <div class="fixed-action-btn horizontal click-to-toggle">
@@ -96,12 +104,11 @@
 
   <!-- Side Menu Nav Begins -->
     <ul id="slide-out" class="side-nav">
-      <li>
-        <div class="userView">
-          <a href="#!name"><span class="white-text name">John Doe</span></a>
-          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-        </div>
-      </li>
+      <div class="mobile-close">
+        <a href="#" class="mobile-close">
+            <i class="material-icons closer" id="closer">close</i>
+        </a>
+      </div>
       <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
       <li><a href="#!">Second Link</a></li>
       <li><div class="divider"></div></li>
@@ -357,8 +364,9 @@
     <script src="scripts/bundle.js"></script>
     <script src="scripts/nav.js"></script>
     <!-- <script src="scripts/materialize.js"></script> -->
+    <!-- Custom Inline JS -->
     <script>
-      $('#leftNavigation').ssdVerticalNavigation();
+        $('#leftNavigation').ssdVerticalNavigation();
     </script>
 
 

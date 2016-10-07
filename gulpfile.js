@@ -7,11 +7,10 @@ var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify');  // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
-var lint = require('gulp-eslint'); //Lint JS files, including JSX
+var jshint = require("gulp-jshint"); //Lint JS files
 var sass = require('gulp-sass'); // Good ol gulp sass
 var rename = require('gulp-rename'); // Gulp rename for minified css files 
 var cleanCss = require('gulp-clean-css'); // Css minifiyer
-
 
 // A comment break line 
 var config = {
@@ -77,16 +76,16 @@ gulp.task('sass', function(){
 		.pipe(connect.reload());
 });
 
-gulp.task('lint', function() {
-	return gulp.src(config.paths.js)
-		.pipe(lint({config: 'eslint.config.json'}))
-		.pipe(lint.format());
+gulp.task('jsLint', function () {
+    gulp.src(config.paths.js) // path to your files
+    .pipe(jshint())
+    .pipe(jshint.reporter()); // Dump results
 });
 
 gulp.task('watch', function() {
 	gulp.watch(config.paths.html, ['html']);
 	gulp.watch(config.paths.sass, ['sass']);
-	gulp.watch(config.paths.js, ['js', 'lint']);
+	gulp.watch(config.paths.js, ['js', 'jsLint']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'sass', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'sass', 'jsLint', 'open', 'watch']);

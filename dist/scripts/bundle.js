@@ -9754,33 +9754,38 @@ module.exports = exports["default"];
 //jQuery
 $ = jQuery = require('jquery');
 
-//slideOut Nav
+//SlideOut Nav
 var Slideout = require('slideout');
 
 //Materialize js
 var materialize = require("materialize");
 
-
+//Namespace pattern
+var namespace = require('./namespace.js');
 
 //ALL CUSTOM JS
-
-// Created: Sep 30, 2016 
-// Author: Jared Neems // Statistics New Zealand
-// Pupose: Front End UI Javascript For Initial Design, User Interface, Responsive
-// 		   Testing and Presentation.
-// Standards: 
+/*Created: Sep 30, 2016 
+Author: Jared Neems // Statistics New Zealand
+Pupose: Front End UI Javascript For Initial Design, User Interface, Responsive
+		   Testing and Presentation.
+Standards: - */
 
 (function(){
-	// All UI updates and adjustments
-	var Ui = {
+		
+		// Initiale namespace instance to creeate accesible object
+		UI = namespace.nm();
+		//Use namespace method
+		UI.createNS("UI.menus");
+		UI.createNS("UI.init");
 
-	 	menus:  function(){
+		UI.menus = function(){
+
 	 		//Check window size and run internal functions. 
 	 		var checkSize = $(window).width();
 	 		var oldNav = 'leftNavContainer';
 	 		var newBody = 'cardWrapper';
 
-	 		if(checkSize <= 1024){
+	 		if(checkSize <= 1180){
 	 			removeNav();
 	 			stretchHorizontalNav();
 	 			updateMatClass();
@@ -9788,6 +9793,7 @@ var materialize = require("materialize");
 
 	 		//Removes static desktop side nav
 			function removeNav(){
+				//Grab the black side nav and remove it from the dom.
 				var elem = document.getElementById(oldNav);
 				elem.parentNode.removeChild(elem);
 			}
@@ -9795,7 +9801,7 @@ var materialize = require("materialize");
 			//Changes Material design class to full width
 			function updateMatClass(){
 				//Change Materilize layout from 10 to 12 for responsiv mobile. Checking via regex.
-				document.getElementById(newBody).className = //con't to next line
+				document.getElementById(newBody).className = //cont' to next line
 				document.getElementById(newBody).className.replace( /(?:^|\s)s10(?!\S)/g , ' s12' );
 				//Trigger inclusion of mobile side nav
 				mobileSideNav();
@@ -9810,13 +9816,61 @@ var materialize = require("materialize");
 			function mobileSideNav(){
 				$('.button-collapse').sideNav();
 				$('.side-nav').css('display', 'block');
+				$('#mobMenu').css('display', 'inline-block');
 			}
 
-		}
-	};
+		};
+
+		UI.init = function(){
+			//Close Button For Mobile Menu
+			$('#closer').click(function(event){
+				event.preventDefault();
+				$('.button-collapse').sideNav('hide');
+			});	
+		};
 
 	// Monitor Screen size for new menu breakpoint:
-	Ui.menus();
+	UI.menus();	
+	UI.init();
 
 })(); //iffe ends
-},{"jquery":1,"materialize":2,"slideout":3}]},{},[6]);
+},{"./namespace.js":7,"jquery":1,"materialize":2,"slideout":3}],7:[function(require,module,exports){
+exports.nm = function(){
+
+	// create the root namespace and making sure we're not overwriting it
+	var UI = UI || {};
+	 
+	// create a general purpose namespace method
+	// this will allow us to create namespace a bit easier
+	UI.createNS = function (namespace) {
+	    var nsparts = namespace.split(".");
+	    var parent = UI;
+	 
+	    // we want to be able to include or exclude the root namespace 
+	    // So we strip it if it's in the namespace
+	    if (nsparts[0] === "UI") {
+	        nsparts = nsparts.slice(1);
+	    }
+	 
+	    // loop through the parts and create 
+	    // a nested namespace if necessary
+	    for (var i = 0; i < nsparts.length; i++) {
+	        var partname = nsparts[i];
+	        // check if the current parent already has 
+	        // the namespace declared, if not create it
+	        if (typeof parent[partname] === "undefined") {
+	            parent[partname] = {};
+	        }
+	        // get a reference to the deepest element 
+	        // in the hierarchy so far
+	        parent = parent[partname];
+	    }
+	    // the parent is now completely constructed 
+	    // with empty namespaces and can be used.
+	    return parent;
+	};
+
+	return UI;
+
+};
+},{}]},{},[6]);

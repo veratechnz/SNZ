@@ -2,17 +2,18 @@
 // Imports
 
 // Materialize Imports
-@import 'variables.scss';
+@import 'variables';
 @import "materialize-sass/components/mixins";
 @import "materialize-sass/components/color";
 @import "materialize-sass/components/variables";
 
-//Material Icons
+//Material Icons && Fonts
 @import "material-icons";
+@import "fonts";
 
 //Normal Sass Imports
-@import 'nav.scss';
-@import 'media.scss';
+@import 'nav';
+@import 'media';
 
 
 // Resets
@@ -20,12 +21,16 @@ body {
 	background-color: #efefef;
 }
 
+// Fonts
+html * {
+	font-family: 'Source Sans Pro';
+}
+
 // Custom Updates
 h1 {
 	font-style: 45px;
 	height: 120px;
 }
-
 
 // CARD RESETS
 // Materialize Card Link Override
@@ -75,6 +80,7 @@ nav {
 }
 
 //Float right
+
 .fr {float: right;}
 
 

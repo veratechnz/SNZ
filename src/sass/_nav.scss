@@ -206,6 +206,27 @@ h1 {
 
 }
 
+//Left Nav Separator
+#leftNavigation.master li.split-marker{
+  margin-bottom: 3.5em;
+  border-bottom: none;
+}
+
+//Menu Social Icons
+#leftNavigation.master li.social-menu {
+  margin-top: 2em;
+  padding-left: 0.2em;
+
+  //Social Icons
+  i {
+    font-size: 1.6em;
+    margin: 0.1em;
+    color: $stats-grey;
+    opacity: 0.6;
+  }
+
+}
+
 //Logo Area In Side Vertical Nav
 .main-logo {
     width: 100%;
@@ -224,7 +245,7 @@ h1 {
 }
 
 
-//I hate Id's in CSS but the original component used them in it's css, thus the use of an Id. 
+//Original component used them in it's css, thus the use of an Id. 
 #leftNavigation.master li.main-logo a {
   border-bottom: none;
   font-size: 1.2em;
@@ -234,6 +255,7 @@ h1 {
   color: #efefef;
   font-style: italic;
 }
+
 li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
   margin-top: .35em;
 }
@@ -268,7 +290,7 @@ li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
     margin-top: 1em;
   }
 
-  .btn-floating.btn-medium.waves-effect.waves-light.red {
+  .btn-floating.btn-medium.red {
     margin: 1em;
 
   }
@@ -289,6 +311,22 @@ li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
   }
 
 
+} //nav horizontal
+
+//Close button for mobile menu
+#closer.material-icons.closer {
+  display: inline-block;
+  float: right; 
+  margin-left: 5em;
+}
+
+html body div.row.over-row ul#slide-out.side-nav div.mobile-close a.mobile-close {
+  padding: 0.2em !important;
+}
+
+//Mobile Menu
+a#mobMenu.button-collapse.btn-floating.mob-menu.btn-medium.red {
+  z-index: 250;
 }
 
 
@@ -339,3 +377,8 @@ div.nav-horizontal i:nth-child(2) {
 .side-nav {
   display: none;
 }
+
+.mob-menu {
+  display: none;
+}
+

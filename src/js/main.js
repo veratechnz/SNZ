@@ -2,33 +2,38 @@
 //jQuery
 $ = jQuery = require('jquery');
 
-//slideOut Nav
+//SlideOut Nav
 var Slideout = require('slideout');
 
 //Materialize js
 var materialize = require("materialize");
 
-
+//Namespace pattern
+var namespace = require('./namespace.js');
 
 //ALL CUSTOM JS
-
-// Created: Sep 30, 2016 
-// Author: Jared Neems // Statistics New Zealand
-// Pupose: Front End UI Javascript For Initial Design, User Interface, Responsive
-// 		   Testing and Presentation.
-// Standards: 
+/*Created: Sep 30, 2016 
+Author: Jared Neems // Statistics New Zealand
+Pupose: Front End UI Javascript For Initial Design, User Interface, Responsive
+		   Testing and Presentation.
+Standards: - */
 
 (function(){
-	// All UI updates and adjustments
-	var Ui = {
+		
+		// Initiale namespace instance to creeate accesible object
+		UI = namespace.nm();
+		//Use namespace method
+		UI.createNS("UI.menus");
+		UI.createNS("UI.init");
 
-	 	menus:  function(){
+		UI.menus = function(){
+
 	 		//Check window size and run internal functions. 
 	 		var checkSize = $(window).width();
 	 		var oldNav = 'leftNavContainer';
 	 		var newBody = 'cardWrapper';
 
-	 		if(checkSize <= 1024){
+	 		if(checkSize <= 1180){
 	 			removeNav();
 	 			stretchHorizontalNav();
 	 			updateMatClass();
@@ -36,6 +41,7 @@ var materialize = require("materialize");
 
 	 		//Removes static desktop side nav
 			function removeNav(){
+				//Grab the black side nav and remove it from the dom.
 				var elem = document.getElementById(oldNav);
 				elem.parentNode.removeChild(elem);
 			}
@@ -43,7 +49,7 @@ var materialize = require("materialize");
 			//Changes Material design class to full width
 			function updateMatClass(){
 				//Change Materilize layout from 10 to 12 for responsiv mobile. Checking via regex.
-				document.getElementById(newBody).className = //con't to next line
+				document.getElementById(newBody).className = //cont' to next line
 				document.getElementById(newBody).className.replace( /(?:^|\s)s10(?!\S)/g , ' s12' );
 				//Trigger inclusion of mobile side nav
 				mobileSideNav();
@@ -58,13 +64,22 @@ var materialize = require("materialize");
 			function mobileSideNav(){
 				$('.button-collapse').sideNav();
 				$('.side-nav').css('display', 'block');
+				$('#mobMenu').css('display', 'inline-block');
 			}
 
-		}
-	};
+		};
+
+		UI.init = function(){
+			//Close Button For Mobile Menu
+			$('#closer').click(function(event){
+				event.preventDefault();
+				$('.button-collapse').sideNav('hide');
+			});	
+		};
 
 	// Monitor Screen size for new menu breakpoint:
-	Ui.menus();
+	UI.menus();	
+	UI.init();
 
 })(); //iffe ends
 
