@@ -75,6 +75,15 @@ Standards: - */
 				event.preventDefault();
 				$('.button-collapse').sideNav('hide');
 			});	
+
+			$('#mobMenu').click(function(event){
+				event.preventDefault();
+				console.log('clicked');
+			});	
+
+			//Modal Trigger and Setup
+			$('.modal-trigger').leanModal();
+
 		};
 
 	// Monitor Screen size for new menu breakpoint:

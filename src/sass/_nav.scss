@@ -307,7 +307,12 @@ li.main-logo a i.fa.fa-bar-chart.leftNavIcon {
     top: 1em;
   }
   .fixed-action-btn.horizontal ul li {
-    margin: 0em 2em 0em 0em;
+    margin: 0em 1em 0em 0em;
+  }
+  .fixed-action-btn.horizontal ul {
+    top: 5%;
+    height: 10%;
+    width: 16em
   }
 
 
@@ -324,9 +329,9 @@ html body div.row.over-row ul#slide-out.side-nav div.mobile-close a.mobile-close
   padding: 0.2em !important;
 }
 
-//Mobile Menu
+//Mobile Hamburger Menu Z index Fix
 a#mobMenu.button-collapse.btn-floating.mob-menu.btn-medium.red {
-  z-index: 250;
+  z-index: 9999;
 }
 
 
