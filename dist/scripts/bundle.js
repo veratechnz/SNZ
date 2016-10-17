@@ -9764,16 +9764,19 @@ var materialize = require("materialize");
 var namespace = require('./namespace.js');
 
 //ALL CUSTOM JS
-/*Created: Sep 30, 2016 
-Author: Jared Neems // Statistics New Zealand
-Pupose: Front End UI Javascript For Initial Design, User Interface, Responsive
-		   Testing and Presentation.
-Standards: - */
+/*
+Created: Sep 30, 2016 
+Author:  Jared Neems // Statistics New Zealand
+Pupose:  Front End UI Javascript For Initial Design, User Interface, 
+		 Responsive Testing and Presentation.
+Standards: 
+*/
 
 (function(){
 		
 		// Initiale namespace instance to creeate accesible object
 		UI = namespace.nm();
+
 		//Use namespace method
 		UI.createNS("UI.menus");
 		UI.createNS("UI.init");
@@ -9826,11 +9829,6 @@ Standards: - */
 			$('#closer').click(function(event){
 				event.preventDefault();
 				$('.button-collapse').sideNav('hide');
-			});	
-
-			$('#mobMenu').click(function(event){
-				event.preventDefault();
-				console.log('clicked');
 			});	
 
 			//Modal Trigger and Setup
